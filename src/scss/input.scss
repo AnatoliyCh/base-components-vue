@@ -1,0 +1,123 @@
+@import "./variables.scss";
+// базовый класс input
+.v-input {
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  width: auto;
+  min-width: 200px;
+  cursor: text;
+
+  .v-input-content {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    color: $color-main-one;
+    transition: background 0.3s;
+    margin-top: 10px;
+
+    // иконка
+    .v-input-icon-wrapper {
+      margin-right: 10px;
+    }
+
+    // поле ввода
+    input {
+      z-index: 1;
+      display: block;
+      color: $color-main-one;
+      font-size: 14px;
+      line-height: 14px;
+      background: initial;
+      padding: 0;
+      border: none;
+      width: 100%;
+      outline: 0;
+      height: 30px;
+    }
+
+    // надпись
+    .v-input-label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      padding: 8px 10px;
+      font-size: 14px;
+      line-height: 14px;
+      color: $color-main-one;
+      pointer-events: none;
+      transition: 0.4s;
+    }
+    // анимация при фокусе
+    input:focus ~ label,
+    .v-input-label-focus {
+      top: -20px;
+      left: 0;
+      color: #41b883;
+      font-size: 12px;
+    }
+
+    // нижняя граница
+    .v-input-border {
+      position: absolute;
+      bottom: -1px;
+      left: 30%;
+      right: 30%;
+      opacity: 0;
+      height: 2px;
+      pointer-events: none;
+      transition: left 0.15s, right 0.15s, opacity 0.15s;
+      background-color: $color-main-two;
+    }
+    .v-input-border-full {
+      left: 0;
+      right: 0;
+      opacity: 1;
+    }
+  }
+  // доавление границ
+  .v-input-content-border {
+    border: 1px solid $color-main-two-light-2;
+    border-radius: 3px;
+    margin-top: 0px;
+  }
+  // заивка цветом
+  .v-input-content-background {
+    background-color: $color-main-two-light-1;
+  }
+}
+// фокус на input
+.v-input-focused {
+  > .v-input-content {
+    background-color: $color-white;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+// размеры
+.v-input-big {
+  .v-input-content {
+    padding: 0 14px;
+
+    input {
+      height: 42px;
+      font-size: 16px;
+    }
+
+    .v-input-label {
+      font-size: 16px;
+    }
+    // анимация при фокусе
+    input:focus ~ label,
+    .v-input-label-focus {
+      top: -20px;
+      left: 0;
+      color: #41b883;
+      font-size: 14px;
+    }
+  }
+}

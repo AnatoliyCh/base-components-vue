@@ -1,0 +1,71 @@
+@import "./variables.scss";
+
+// стандартные цвета кнопки
+$color-button-default: $color-main-two-light-2;
+$color-button-default-hover: $color-main-two-light-1; // наведение
+$color-button-default-active: $color-main-two-light-3; // нажатие
+
+$color-button-primary: $color-main-two;
+$color-button-primary-hover: $color-main-two-light-4; // наведение
+$color-button-primary-active: $color-main-two-light-5; // нажатие
+// базовый класс кнопок
+.v-button {
+  background: $color-button-default;
+  // границы
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  // текст
+  user-select: none; // выделение текста
+  color: $color-main-one;
+  font-family: inherit;
+
+  cursor: pointer;
+  padding: 0 14px;
+  height: 32px;
+  font-size: 14px;
+
+  &:hover {
+    background-color: $color-button-default-hover;
+  }
+  &:active {
+    background-color: $color-button-default-active;
+  }
+}
+.primary {
+  color: $color-white;
+  background-color: $color-main-two;
+
+  &:hover {
+    background-color: $color-button-primary-hover;
+  }
+  &:active {
+    background-color: $color-button-primary-active;
+  }
+  &:disabled {
+    color: $color-main-one;
+  }
+}
+.flat {
+  background-color: $color-white;
+  color: $color-main-one;
+}
+// disabled
+.v-button,
+.primary,
+.flat {
+  &:disabled {
+    background-color: $color-button-default-hover;
+    cursor: default;
+    pointer-events: none;
+  }
+}
+// размеры кнопок
+.big-button {
+  padding: 0 18px;
+  font-size: 16px;
+  height: 44px;
+}
+.round-button {
+  border-radius: 17px;
+}

@@ -1,29 +1,80 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+    <label class="label-margin">colors: </label>
+    <div style="height: 16px; background-color: #ebf8f3"></div>
+    <div style="height: 16px; background-color: #e4f5ef"></div>
+    <div style="height: 16px; background-color: #c8ebdf"></div>
+    <div style="height: 16px; background-color: #70cca2"></div>
+    <div style="height: 16px; background-color: #3daa79"></div>
+    <div style="height: 16px; background-color: #34495e"></div>
+    <label class="label-margin">v-button: </label>
+    <VButton label="Normal" />
+    <VButton label="Disabled" disabled />
+    <label class="label-margin">v-button primary: </label>
+    <VButton class="primary" label="Normal" />
+    <VButton class="primary" label="Disabled" disabled />
+    <label class="label-margin">v-button flat: </label>
+    <VButton class="flat" label="Normal" />
+    <VButton class="flat" label="Disabled" disabled />
+    <label class="label-margin"
+      >[v-button | primary | flat] round-button :
+    </label>
+    <VButton class="round-button" label="Normal " />
+    <VButton class="primary round-button" label="Normal" />
+    <VButton class="flat round-button" label="Normal" />
+    <label class="label-margin"
+      >[v-button | primary | flat] big-button :
+    </label>
+    <VButton class="big-button" label="Normal " />
+    <VButton class="primary big-button" label="Normal" />
+    <VButton class="flat big-button" label="Normal" />
+    <div style="height: 16px"></div>
+    <label class="label-margin">v-input: </label>
+    <VInputText v-model="test1" :maxlength="2" />
+    <div>{{ test1 }}</div>
+    <label class="label-margin">v-input + label: </label>
+    <VInputText v-model="test2" label="123" />
+    <div>{{ test2 }}</div>
+    <label class="label-margin">v-input v-input-big: </label>
+    <VInputText size="big" />
+    <VInputText size="big" label="123" />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import HelloWorld from "./components/HelloWorld.vue";
+import VButton from "./components/v-button.vue";
+import VInputText from "./components/v-input-text.vue";
 
 @Component({
   components: {
-    HelloWorld
+    VButton,
+    VInputText
   }
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  test1 = "123";
+  test2 = "123";
+}
 </script>
 
 <style lang="scss">
+@import "./scss/__root";
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  // text-align: center;
+  // color: #2c3e50;
   margin-top: 60px;
+
+  .label-margin {
+    display: block;
+    color: $color-main-one;
+    margin: 16px 0 4px;
+  }
+  button {
+    margin-right: 8px;
+  }
 }
 </style>
