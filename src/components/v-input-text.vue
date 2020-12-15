@@ -43,7 +43,7 @@
 <script lang="ts">
 import { Component, Model } from "vue-property-decorator";
 import { mixins } from "vue-class-component";
-import VInput from "@/mixins/v-input";
+import VInput from "../mixins/v-input";
 
 @Component({ inheritAttrs: true })
 export default class VInputText extends mixins(VInput) {
