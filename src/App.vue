@@ -33,11 +33,28 @@
     <VInputText v-model="test1" :maxlength="2" />
     <div>{{ test1 }}</div>
     <label class="label-margin">v-input + label: </label>
-    <VInputText v-model="test2" label="123" />
+    <VInputText :value="test2" @change="test2 = $event" label="123" />
     <div>{{ test2 }}</div>
     <label class="label-margin">v-input v-input-big: </label>
     <VInputText size="big" />
     <VInputText size="big" label="123" />
+    <label class="label-margin">v-block: </label>
+    <div
+      style="
+				height: 500px;
+				width: 500px;
+				margin: 15px;
+				padding-top: 4px;
+				background-color: #c8ebdf;
+			"
+    >
+      <VBlock>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+      </VBlock>
+    </div>
   </div>
 </template>
 
@@ -45,11 +62,13 @@
 import { Component, Vue } from "vue-property-decorator";
 import VButton from "./components/v-button.vue";
 import VInputText from "./components/v-input-text.vue";
+import VBlock from "./components/v-block.vue";
 
 @Component({
   components: {
     VButton,
-    VInputText
+    VInputText,
+    VBlock
   }
 })
 export default class App extends Vue {
