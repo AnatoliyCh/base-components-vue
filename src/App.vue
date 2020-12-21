@@ -55,6 +55,7 @@
         <div>1</div>
       </VBlock>
     </div>
+    <VSpiner />
   </div>
 </template>
 
@@ -63,12 +64,14 @@ import { Component, Vue } from "vue-property-decorator";
 import VButton from "./base/components/v-button.vue";
 import VInputText from "./base/components/v-input-text.vue";
 import VBlock from "./base/components/v-block.vue";
+import VSpiner from "./base/components/v-spiner.vue";
 
 @Component({
   components: {
     VButton,
     VInputText,
-    VBlock
+    VBlock,
+    VSpiner
   }
 })
 export default class App extends Vue {
