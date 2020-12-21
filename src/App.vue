@@ -60,9 +60,9 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import VButton from "./components/v-button.vue";
-import VInputText from "./components/v-input-text.vue";
-import VBlock from "./components/v-block.vue";
+import VButton from "./base/components/v-button.vue";
+import VInputText from "./base/components/v-input-text.vue";
+import VBlock from "./base/components/v-block.vue";
 
 @Component({
   components: {
@@ -78,7 +78,7 @@ export default class App extends Vue {
 </script>
 
 <style lang="scss">
-@import "./scss/__root";
+@import "src/base/scss/__root.scss";
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

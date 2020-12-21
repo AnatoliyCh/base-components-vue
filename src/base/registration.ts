@@ -13,6 +13,6 @@ export default {
   components: {
     VButton,
     VInputText,
-    VBlock,
-  },
+    VBlock
+  }
 };
