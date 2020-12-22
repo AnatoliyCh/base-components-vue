@@ -10,22 +10,38 @@ export default class VInputMixin extends Vue {
   };
 
   // максимальная длина текста
-  @Prop({ type: [Number, String], default: 32, validator: (x) => typeof x === "number" })
+  @Prop({
+    type: [Number, String],
+    default: 32,
+    validator: x => typeof x === "number"
+  })
   readonly maxlength!: number;
   // надпись (для специальных элементов)
-  @Prop({ type: [Number, String], default: "", validator: (x) => typeof x === "string" })
+  @Prop({
+    type: [Number, String],
+    default: "",
+    validator: x => typeof x === "string"
+  })
   readonly label!: string | null;
   // размер контролла
-  @Prop({ type: String, default: "normal", validator: (x) => typeof x === "string" })
+  @Prop({
+    type: String,
+    default: "normal",
+    validator: x => typeof x === "string"
+  })
   readonly size!: sizeInput | null;
   // placeholder элемента
-  @Prop({ type: String, default: "", validator: (x) => typeof x === "string" })
+  @Prop({ type: String, default: "", validator: x => typeof x === "string" })
   readonly placeholder!: string | null;
   // граница элемента
-  @Prop({ type: Boolean, default: false, validator: (x) => typeof x === "boolean" })
+  @Prop({
+    type: Boolean,
+    default: false,
+    validator: x => typeof x === "boolean"
+  })
   readonly bordered!: boolean;
   // иконка (слева)
-  @Prop({ type: String, default: null, validator: (x) => typeof x === "string" })
+  @Prop({ type: String, default: null, validator: x => typeof x === "string" })
   readonly icon!: string | null;
 
   isFocused = false; // нажатие на контейнер: v-input

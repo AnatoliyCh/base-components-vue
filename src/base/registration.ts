@@ -17,8 +17,8 @@ export default {
     VButton,
     VInputText,
     VBlock,
-    VSpiner,
-  },
+    VSpiner
+  }
 };
 
 // импорт fontawesome icons

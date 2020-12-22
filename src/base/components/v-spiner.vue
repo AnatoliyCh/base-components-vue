@@ -1,14 +1,14 @@
 <template functional>
-	<div class="v-spiner">
-		<div
-			class="v-loader"
-			:style="{
-				width: props.size + 'px',
-				height: props.size + 'px',
-				'border-width': props.size / 4 + 'px',
-			}"
-		></div>
-	</div>
+  <div class="v-spiner">
+    <div
+      class="v-loader"
+      :style="{
+        width: props.size + 'px',
+        height: props.size + 'px',
+        'border-width': props.size / 4 + 'px'
+      }"
+    ></div>
+  </div>
 </template>
 
 <script lang="ts">
