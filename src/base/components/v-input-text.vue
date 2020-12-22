@@ -45,10 +45,10 @@
 <script lang="ts">
 import { Component, Model } from "vue-property-decorator";
 import { mixins } from "vue-class-component";
-import VInput from "../mixins/v-input";
+import VInputMixin from "../mixins/v-input-mixin";
 
 @Component({ inheritAttrs: true })
-export default class VInputText extends mixins(VInput) {
+export default class VInputText extends mixins(VInputMixin) {
   /** v-model - изменение на каждый ввод
    * :value и '@change' - изменение после смены фокуса */
   @Model("input", {
