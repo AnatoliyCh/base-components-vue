@@ -21,8 +21,8 @@ export default {
     VInputText,
     VInputPassword,
     VBlock,
-    VSpiner,
-  },
+    VSpiner
+  }
 };
 
 // импорт fontawesome icons
