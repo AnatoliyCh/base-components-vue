@@ -75,6 +75,8 @@
 		<label class="label-margin">v-input v-input-big v-input-icon: </label>
 		<VInputText size="big" icon="user" />
 		<VInputText size="big" icon="key" label="123" placeholder="placeholder" />
+		<label class="label-margin">v-input-password: </label>
+		<VInputPassword v-model="test1" :maxlength="2" icon="key" />
 		<label class="label-margin">END </label>
 		<label class="label-margin">ICONS </label>
 		<div class="block-icon">
@@ -89,6 +91,7 @@
 import { Component, Vue } from "vue-property-decorator";
 import VButton from "./base/components/v-button.vue";
 import VInputText from "./base/components/v-input-text.vue";
+import VInputPassword from "./base/components/v-input-password.vue";
 import VBlock from "./base/components/v-block.vue";
 import VSpiner from "./base/components/v-spiner.vue";
 
@@ -96,6 +99,7 @@ import VSpiner from "./base/components/v-spiner.vue";
   components: {
     VButton,
     VInputText,
+    VInputPassword,
     VBlock,
     VSpiner
   }

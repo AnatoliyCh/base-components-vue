@@ -6,6 +6,9 @@ Vue.component("v-button", VButton);
 import VInputText from "./components/v-input-text.vue"; // v-input-text.vue
 Vue.component("v-input-text", VInputText);
 
+import VInputPassword from "./components/v-input-password.vue"; // v-input-password.vue
+Vue.component("v-input-password", VInputPassword);
+
 import VBlock from "./components/v-block.vue"; // v-input-text.vue
 Vue.component("v-block", VBlock);
 
@@ -16,9 +19,10 @@ export default {
   components: {
     VButton,
     VInputText,
+    VInputPassword,
     VBlock,
-    VSpiner
-  }
+    VSpiner,
+  },
 };
 
 // импорт fontawesome icons
