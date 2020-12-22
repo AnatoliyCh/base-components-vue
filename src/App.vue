@@ -60,6 +60,7 @@
 			</VBlock>
 		</div>
 		<VSpiner />
+		<font-awesome-icon icon="user-secret" />
 	</div>
 </template>
 

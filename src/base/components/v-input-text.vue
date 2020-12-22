@@ -28,7 +28,7 @@
 				type="text"
 			/>
 			<label
-				v-if="isLabel"
+				v-if="label"
 				:class="['v-input-label', { 'v-input-label-focus': validByLabel }]"
 				>{{ label }}</label
 			>
