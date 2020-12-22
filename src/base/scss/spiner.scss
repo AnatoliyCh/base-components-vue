@@ -1,7 +1,7 @@
 @import "./variables.scss";
 
 .v-spiner {
-  .loader {
+  .v-loader {
     border-radius: 50%;
     animation: spin 1s linear infinite;
     border: 8px solid $color-main-two; // задний цвет
