@@ -24,6 +24,9 @@ export default class VInputMixin extends Vue {
   // граница элемента
   @Prop({ type: Boolean, default: false, validator: (x) => typeof x === "boolean" })
   readonly bordered!: boolean;
+  // иконка (слева)
+  @Prop({ type: String, default: null, validator: (x) => typeof x === "string" })
+  readonly icon!: string | null;
 
   isFocused = false; // нажатие на контейнер: v-input
 

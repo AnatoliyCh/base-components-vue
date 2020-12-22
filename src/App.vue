@@ -41,6 +41,7 @@
 		<div>{{ test2 }}</div>
 		<label class="label-margin">v-input v-input-big: </label>
 		<VInputText size="big" />
+		<VInputText size="big" bordered />
 		<VInputText size="big" label="123" />
 		<label class="label-margin">v-block: </label>
 		<div
@@ -61,6 +62,25 @@
 		</div>
 		<VSpiner />
 		<icon icon="user-secret" />
+		<label class="label-margin">v-input v-input-icon: </label>
+		<VInputText v-model="test1" icon="user-secret" />
+		<VInputText v-model="test1" bordered icon="user-secret" />
+		<label class="label-margin">v-input v-input-icon label: </label>
+		<VInputText
+			:value="test2"
+			icon="user-secret"
+			@change="test2 = $event"
+			label="123"
+		/>
+		<label class="label-margin">v-input v-input-big v-input-icon: </label>
+		<VInputText size="big" icon="user-secret" />
+		<VInputText
+			size="big"
+			icon="user-secret"
+			label="123"
+			placeholder="placeholder"
+		/>
+		<label class="label-margin">END </label>
 	</div>
 </template>
 
@@ -88,6 +108,7 @@ export default class App extends Vue {
 <style lang="scss">
 @import "src/base/scss/__root.scss";
 #app {
+	margin-left: 16px;
 	font-family: Avenir, Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;

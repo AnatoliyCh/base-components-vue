@@ -21,8 +21,19 @@
     margin-top: 10px;
 
     // иконка
-    .v-input-icon-wrapper {
-      margin-right: 10px;
+    .v-input-icon {
+      margin-right: 6px;
+      svg {
+        width: 16px;
+        height: 16px;
+        color: $color-main-one;
+        transition: fill 0.3s;
+      }
+    }
+    .v-input-icon-focus {
+      svg {
+        color: $color-main-two;
+      }
     }
 
     // поле ввода
@@ -38,6 +49,9 @@
       width: 100%;
       outline: 0;
       height: 30px;
+      &::placeholder {
+        color: $color-main-one;
+      }
     }
 
     // надпись
@@ -53,9 +67,13 @@
       pointer-events: none;
       transition: 0.4s;
     }
+    .v-input-label-icon {
+      margin-left: 22px;
+    }
     // анимация при фокусе
     input:focus ~ label,
     .v-input-label-focus {
+      margin-left: 0px; // из-за v-input-label-icon
       top: -20px;
       left: 0;
       color: #41b883;
@@ -104,17 +122,32 @@
   .v-input-content {
     padding: 0 14px;
 
+    // иконка
+    .v-input-icon {
+      margin-right: 10px;
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
     input {
       height: 42px;
       font-size: 16px;
     }
-
+    // надпись
     .v-input-label {
+      padding: 16px 10px 0px;
       font-size: 16px;
+    }
+    .v-input-label-icon {
+      margin-left: 30px;
     }
     // анимация при фокусе
     input:focus ~ label,
     .v-input-label-focus {
+      margin-left: 0px; // из-за v-input-label-icon
+      padding: 8px 10px;
       top: -20px;
       left: 0;
       color: #41b883;

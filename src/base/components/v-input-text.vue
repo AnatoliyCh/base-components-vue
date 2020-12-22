@@ -15,9 +15,12 @@
 			]"
 		>
 			<!-- иконка -->
-			<!-- <div class="v-input-icon-wrapper">
-        <i>1</i>
-      </div> -->
+			<div
+				v-if="icon"
+				:class="['v-input-icon', { 'v-input-icon-focus': isFocused || value }]"
+			>
+				<icon :icon="icon" />
+			</div>
 			<input
 				:value="value"
 				@change="$emit('change', $event.target.value)"
@@ -29,7 +32,11 @@
 			/>
 			<label
 				v-if="label"
-				:class="['v-input-label', { 'v-input-label-focus': validByLabel }]"
+				:class="[
+					'v-input-label',
+					{ 'v-input-label-focus': validByLabel },
+					{ 'v-input-label-icon': icon },
+				]"
 				>{{ label }}</label
 			>
 			<div
