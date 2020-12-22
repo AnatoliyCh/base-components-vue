@@ -46,12 +46,12 @@
     <label class="label-margin">v-block: </label>
     <div
       style="
-				height: 500px;
-				width: 500px;
-				margin: 15px;
-				padding-top: 4px;
-				background-color: #c8ebdf;
-			"
+        height: 500px;
+        width: 500px;
+        margin: 15px;
+        padding-top: 4px;
+        background-color: #c8ebdf;
+      "
     >
       <VBlock>
         <div>1</div>
