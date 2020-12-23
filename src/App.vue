@@ -83,6 +83,9 @@
       <icon icon="user-secret" />
       <icon icon="user" />
       <icon icon="key" />
+      <icon icon="home" />
+      <icon icon="users" />
+      <icon icon="calendar-alt" />
     </div>
   </div>
 </template>
