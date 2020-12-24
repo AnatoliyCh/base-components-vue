@@ -15,13 +15,17 @@ Vue.component("v-block", VBlock);
 import VSpiner from "./components/v-spiner.vue"; // v-spiner.vue
 Vue.component("v-spiner", VSpiner);
 
+import VTable from "./components/v-table.vue"; // v-table.vue
+Vue.component("v-table", VTable);
+
 export default {
   components: {
     VButton,
     VInputText,
     VInputPassword,
     VBlock,
-    VSpiner
+    VSpiner,
+    VTable
   }
 };
 

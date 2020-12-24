@@ -77,6 +77,16 @@
     <VInputText size="big" icon="key" label="123" placeholder="placeholder" />
     <label class="label-margin">v-input-password: </label>
     <VInputPassword v-model="test1" :maxlength="2" icon="key" />
+
+    <label class="label-margin">v-table: </label>
+    <v-table :headers="['1', '2', '3']" :data="testTable">
+      <template #default="{ item }">
+        <td>{{ item.k1 }}</td>
+        <td>{{ item.k2 }}</td>
+        <td>{{ item.k3 }}</td>
+      </template>
+    </v-table>
+
     <label class="label-margin">END </label>
     <label class="label-margin">ICONS </label>
     <div class="block-icon">
@@ -110,6 +120,11 @@ import VSpiner from "./base/components/v-spiner.vue";
 export default class App extends Vue {
   test1 = "123";
   test2 = "123";
+
+  testTable = [
+    { k1: "1", k2: "2", k3: "3" },
+    { k1: "1", k2: "2", k3: "3" }
+  ];
 }
 </script>
 
