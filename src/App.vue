@@ -34,7 +34,7 @@
     <label class="label-margin">v-input bordered: </label>
     <VInputText v-model="test1" :maxlength="2" bordered />
     <label class="label-margin">v-input placeholder: </label>
-    <VInputText v-model="test1" :maxlength="2" placeholder="placeholder" />
+    <VInputText :maxlength="2" placeholder="placeholder" />
     <div>{{ test1 }}</div>
     <label class="label-margin">v-input + label: </label>
     <VInputText :value="test2" @change="test2 = $event" label="123" />
@@ -46,7 +46,7 @@
     <label class="label-margin">v-block: </label>
     <div
       style="
-        height: 500px;
+        height: 100px;
         width: 500px;
         margin: 15px;
         padding-top: 4px;
