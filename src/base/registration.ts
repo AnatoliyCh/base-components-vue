@@ -21,8 +21,8 @@ export default {
     VInputText,
     VInputPassword,
     VBlock,
-    VSpiner,
-  },
+    VSpiner
+  }
 };
 
 // импорт fontawesome icons
@@ -33,7 +33,7 @@ import {
   faKey,
   faHome,
   faUsers,
-  faCalendarAlt,
+  faCalendarAlt
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
