@@ -32,7 +32,7 @@ $color-button-primary-active: $color-main-two-light-5; // нажатие
     background-color: $color-button-default-active;
   }
 }
-.primary {
+.v-button-primary {
   color: $color-white;
   background-color: $color-main-two;
 
@@ -52,7 +52,7 @@ $color-button-primary-active: $color-main-two-light-5; // нажатие
 }
 // disabled
 .v-button,
-.primary,
+.v-button-primary,
 .flat {
   &:disabled {
     background-color: $color-button-default-hover;
