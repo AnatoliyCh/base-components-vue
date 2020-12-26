@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="wrapper" style="display: block">
-      <label class="label-margin">colors: </label>
+      <label>colors: </label>
       <div style="height: 16px; background-color: #ebf8f3"></div>
       <div style="height: 16px; background-color: #e4f5ef"></div>
       <div style="height: 16px; background-color: #c8ebdf"></div>
@@ -17,12 +17,12 @@
         <VButton disabled>Disabled</VButton>
       </div>
       <div>
-        <label class="label-margin">button primary: </label>
+        <label>button primary: </label>
         <VButton primary>Normal</VButton>
         <VButton primary disabled>Disabled</VButton>
       </div>
       <div>
-        <label class="label-margin">button flat: </label>
+        <label>button flat: </label>
         <VButton flat>Normal</VButton>
         <VButton flat disabled>Disabled</VButton>
       </div>
@@ -44,6 +44,13 @@
         <VButton primary size="big">Normal</VButton>
         <VButton flat size="big">Normal</VButton>
         <VButton size="big" circle>+</VButton>
+      </div>
+    </div>
+    <div class="wrapper">
+      <div>
+        <label>checkbox: </label>
+        <VCheckbox v-model="checkbox" size="big" label="1" />
+        <label>{{ checkbox }}</label>
       </div>
     </div>
     <label class="label-margin">v-input: </label>
@@ -126,6 +133,7 @@ import { Component, Vue } from "vue-property-decorator";
 import VButton from "./base/components/v-button.vue";
 import VInputText from "./base/components/v-input-text.vue";
 import VInputPassword from "./base/components/v-input-password.vue";
+import VCheckbox from "./base/components/v-checkbox.vue";
 import VBlock from "./base/components/v-block.vue";
 import VSpiner from "./base/components/v-spiner.vue";
 import VModal from "./base/components/v-modal.vue";
@@ -135,6 +143,7 @@ import VModal from "./base/components/v-modal.vue";
     VButton,
     VInputText,
     VInputPassword,
+    VCheckbox,
     VBlock,
     VSpiner,
     VModal
@@ -150,6 +159,7 @@ export default class App extends Vue {
   ];
 
   modalShow = false;
+  checkbox = true;
 }
 </script>
 
@@ -169,7 +179,7 @@ export default class App extends Vue {
     margin-bottom: 16px;
     div {
       margin-right: 32px;
-      > label {
+      label:not([class]) {
         display: block;
         color: $color-main-one;
         margin: 16px 0 4px;
