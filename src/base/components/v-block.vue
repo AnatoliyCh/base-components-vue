@@ -13,7 +13,6 @@ export default class VBlock extends Vue {}
 
 <style lang="scss" scoped>
 @import "../scss/__root";
-
 .v-block {
   height: min-content;
   background-color: $color-white;
