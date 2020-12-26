@@ -8,6 +8,7 @@
       <div style="height: 16px; background-color: #70cca2"></div>
       <div style="height: 16px; background-color: #3daa79"></div>
       <div style="height: 16px; background-color: #34495e"></div>
+      <div style="height: 16px; background-color: #829ebb"></div>
     </div>
     <div class="wrapper">
       <div>
