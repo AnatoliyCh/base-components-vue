@@ -103,6 +103,10 @@
         <td>{{ item.k3 }}</td>
       </template>
     </v-table>
+    <div class="wrapper">
+      <v-button @click="modalShow = true">Модальное окно</v-button>
+      <VModal v-model="modalShow"></VModal>
+    </div>
 
     <label class="label-margin">END </label>
     <label class="label-margin">ICONS </label>
@@ -124,6 +128,7 @@ import VInputText from "./base/components/v-input-text.vue";
 import VInputPassword from "./base/components/v-input-password.vue";
 import VBlock from "./base/components/v-block.vue";
 import VSpiner from "./base/components/v-spiner.vue";
+import VModal from "./base/components/v-modal.vue";
 
 @Component({
   components: {
@@ -131,7 +136,8 @@ import VSpiner from "./base/components/v-spiner.vue";
     VInputText,
     VInputPassword,
     VBlock,
-    VSpiner
+    VSpiner,
+    VModal
   }
 })
 export default class App extends Vue {
@@ -142,6 +148,8 @@ export default class App extends Vue {
     { k1: "1", k2: "2", k3: "3" },
     { k1: "1", k2: "2", k3: "3" }
   ];
+
+  modalShow = false;
 }
 </script>
 
