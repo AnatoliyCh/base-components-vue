@@ -9,6 +9,9 @@ Vue.component("v-input-text", VInputText);
 import VInputPassword from "./components/v-input-password.vue"; // v-input-password.vue
 Vue.component("v-input-password", VInputPassword);
 
+import VCheckbox from "./components/v-checkbox.vue"; // v-checkbox.vue
+Vue.component("v-checkbox", VCheckbox);
+
 import VBlock from "./components/v-block.vue"; // v-block.vue
 Vue.component("v-block", VBlock);
 
@@ -26,6 +29,7 @@ export default {
     VButton,
     VInputText,
     VInputPassword,
+    VCheckbox,
     VBlock,
     VSpiner,
     VTable,
