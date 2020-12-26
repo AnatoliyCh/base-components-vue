@@ -1,17 +1,13 @@
 <template>
   <div
-    :class="[
-      'v-input',
-      { 'v-input-focused': isFocused },
-      { 'v-input-big': size === 'big' }
-    ]"
+    :class="['v-input', { 'v-input-focused': isFocused }, `v-input-${size}`]"
     @click.stop="setIsFocused"
   >
     <div
       :class="[
         'v-input-content',
         { 'v-input-content-border': bordered },
-        { 'v-input-content-background': !label }
+        { 'v-input-content-background': !label },
       ]"
     >
       <!-- иконка -->
@@ -19,7 +15,7 @@
         v-if="icon"
         :class="[
           'v-input-icon',
-          { 'v-input-icon-focus': isFocused || (value && label) }
+          { 'v-input-icon-focus': isFocused || (value && label) },
         ]"
       >
         <icon :icon="icon" />
@@ -40,7 +36,7 @@
         :class="[
           'v-input-label',
           { 'v-input-label-focus': validByLabel },
-          { 'v-input-label-icon': icon }
+          { 'v-input-label-icon': icon },
         ]"
         >{{ label }}</label
       >
@@ -48,7 +44,7 @@
       <div
         :class="[
           'v-input-border',
-          { 'v-input-border-full': label || isFocused }
+          { 'v-input-border-full': label || isFocused },
         ]"
       />
     </div>
