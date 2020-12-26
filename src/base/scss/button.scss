@@ -46,26 +46,32 @@ $color-button-primary-active: $color-main-two-light-5; // нажатие
     color: $color-main-one;
   }
 }
-.flat {
+.v-button-flat {
   background-color: $color-white;
   color: $color-main-one;
 }
+// размеры кнопок
+.v-button-big {
+  padding: 0 18px;
+  font-size: 16px;
+  height: 44px;
+}
+// округление кнопок
+.v-button-round {
+  border-radius: 17px;
+}
+.v-button-circle {
+  border-radius: 100%;
+  padding: 0px;
+}
+
 // disabled
 .v-button,
 .v-button-primary,
-.flat {
+.v-button-flat {
   &:disabled {
     background-color: $color-button-default-hover;
     cursor: default;
     pointer-events: none;
   }
-}
-// размеры кнопок
-.big-button {
-  padding: 0 18px;
-  font-size: 16px;
-  height: 44px;
-}
-.round-button {
-  border-radius: 17px;
 }
