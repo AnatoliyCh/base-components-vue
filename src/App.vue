@@ -1,34 +1,50 @@
 <template>
   <div id="app">
-    <label class="label-margin">colors: </label>
-    <div style="height: 16px; background-color: #ebf8f3"></div>
-    <div style="height: 16px; background-color: #e4f5ef"></div>
-    <div style="height: 16px; background-color: #c8ebdf"></div>
-    <div style="height: 16px; background-color: #70cca2"></div>
-    <div style="height: 16px; background-color: #3daa79"></div>
-    <div style="height: 16px; background-color: #34495e"></div>
-    <label class="label-margin">v-button: </label>
-    <VButton label="Normal" />
-    <VButton label="Disabled" disabled />
-    <label class="label-margin">v-button primary: </label>
-    <VButton class="primary" label="Normal" />
-    <VButton class="primary" label="Disabled" disabled />
-    <label class="label-margin">v-button flat: </label>
-    <VButton class="flat" label="Normal" />
-    <VButton class="flat" label="Disabled" disabled />
-    <label class="label-margin"
-      >[v-button | primary | flat] round-button :
-    </label>
-    <VButton class="round-button" label="Normal " />
-    <VButton class="primary round-button" label="Normal" />
-    <VButton class="flat round-button" label="Normal" />
-    <label class="label-margin"
-      >[v-button | primary | flat] big-button :
-    </label>
-    <VButton class="big-button" label="Normal " />
-    <VButton class="primary big-button" label="Normal" />
-    <VButton class="flat big-button" label="Normal" />
-    <div style="height: 16px"></div>
+    <div class="wrapper" style="display: block">
+      <label class="label-margin">colors: </label>
+      <div style="height: 16px; background-color: #ebf8f3"></div>
+      <div style="height: 16px; background-color: #e4f5ef"></div>
+      <div style="height: 16px; background-color: #c8ebdf"></div>
+      <div style="height: 16px; background-color: #70cca2"></div>
+      <div style="height: 16px; background-color: #3daa79"></div>
+      <div style="height: 16px; background-color: #34495e"></div>
+    </div>
+    <div class="wrapper">
+      <div>
+        <label>button: </label>
+        <VButton>Normal</VButton>
+        <VButton disabled>Disabled</VButton>
+      </div>
+      <div>
+        <label class="label-margin">button primary: </label>
+        <VButton primary>Normal</VButton>
+        <VButton primary disabled>Disabled</VButton>
+      </div>
+      <div>
+        <label class="label-margin">button flat: </label>
+        <VButton flat>Normal</VButton>
+        <VButton flat disabled>Disabled</VButton>
+      </div>
+      <div>
+        <label> [button | primary | flat] round : </label>
+        <VButton round>Normal</VButton>
+        <VButton round primary>Normal</VButton>
+        <VButton round flat>Normal</VButton>
+      </div>
+      <div>
+        <label> [button | primary | flat] circle : </label>
+        <VButton circle>+</VButton>
+        <VButton circle primary>-</VButton>
+        <VButton circle flat>+</VButton>
+      </div>
+      <div>
+        <label> [button | primary | flat | circle] big-button : </label>
+        <VButton size="big">Normal</VButton>
+        <VButton primary size="big">Normal</VButton>
+        <VButton flat size="big">Normal</VButton>
+        <VButton size="big" circle>+</VButton>
+      </div>
+    </div>
     <label class="label-margin">v-input: </label>
     <VInputText v-model="test1" :maxlength="2" />
     <label class="label-margin">v-input bordered: </label>
@@ -138,6 +154,19 @@ export default class App extends Vue {
   // text-align: center;
   // color: #2c3e50;
   margin-top: 60px;
+
+  .wrapper {
+    display: flex;
+    margin-bottom: 16px;
+    div {
+      margin-right: 32px;
+      > label {
+        display: block;
+        color: $color-main-one;
+        margin: 16px 0 4px;
+      }
+    }
+  }
 
   .label-margin {
     display: block;
