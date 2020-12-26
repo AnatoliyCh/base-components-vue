@@ -18,7 +18,7 @@
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
 
-type sizeButton = "normal" | "big"; // размеры компонента input
+type sizeButton = "normal" | "big"; // размеры компонента Button
 
 @Component({ inheritAttrs: true })
 export default class VButton extends Vue {
