@@ -49,7 +49,8 @@
     <div class="wrapper">
       <div>
         <label>checkbox: </label>
-        <VCheckbox v-model="checkbox" size="big" label="1" />
+        <VCheckbox v-model="checkbox" label="123" />
+        <VCheckbox v-model="checkbox" size="big" label="456" />
         <label>{{ checkbox }}</label>
       </div>
     </div>
@@ -178,7 +179,7 @@ export default class App extends Vue {
     display: flex;
     margin-bottom: 16px;
     div {
-      margin-right: 32px;
+      margin-right: 40px;
       label:not([class]) {
         display: block;
         color: $color-main-one;
