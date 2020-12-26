@@ -35,7 +35,7 @@
       <div>
         <label> [button | primary | flat] circle : </label>
         <VButton circle>+</VButton>
-        <VButton circle primary>-</VButton>
+        <VButton circle primary>+</VButton>
         <VButton circle flat>+</VButton>
       </div>
       <div>
