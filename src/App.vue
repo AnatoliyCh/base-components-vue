@@ -100,6 +100,13 @@
     <label class="label-margin">v-input v-input-big v-input-icon: </label>
     <VInputText size="big" icon="user" />
     <VInputText size="big" icon="key" label="123" placeholder="placeholder" />
+    <div class="wrapper">
+      <div>
+        <label>v-input-number: </label>
+        <VInputNumber v-model="testInputNumber" centered />
+        <label>{{ testInputNumber }}</label>
+      </div>
+    </div>
     <label class="label-margin">v-input-password: </label>
     <VInputPassword v-model="test1" :maxlength="2" icon="key" />
 
@@ -134,6 +141,7 @@ import { Component, Vue } from "vue-property-decorator";
 import VButton from "./base/components/v-button.vue";
 import VInputText from "./base/components/v-input-text.vue";
 import VInputPassword from "./base/components/v-input-password.vue";
+import VInputNumber from "./base/components/v-input-number.vue";
 import VCheckbox from "./base/components/v-checkbox.vue";
 import VBlock from "./base/components/v-block.vue";
 import VSpiner from "./base/components/v-spiner.vue";
@@ -144,6 +152,7 @@ import VModal from "./base/components/v-modal.vue";
     VButton,
     VInputText,
     VInputPassword,
+    VInputNumber,
     VCheckbox,
     VBlock,
     VSpiner,
@@ -153,6 +162,8 @@ import VModal from "./base/components/v-modal.vue";
 export default class App extends Vue {
   test1 = "123";
   test2 = "123";
+
+  testInputNumber: number | null = null;
 
   testTable = [
     { k1: "1", k2: "2", k3: "3" },
@@ -178,7 +189,7 @@ export default class App extends Vue {
   .wrapper {
     display: flex;
     margin-bottom: 16px;
-    div {
+    > div {
       margin-right: 40px;
       label:not([class]) {
         display: block;
