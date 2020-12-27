@@ -6,7 +6,7 @@
   vertical-align: middle;
   box-sizing: border-box;
   width: auto;
-  min-width: 200px;
+  min-width: 40px;
   cursor: text;
 
   .v-input-content {
@@ -52,6 +52,15 @@
       &::placeholder {
         color: $color-main-one;
       }
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      // Chrome, Safari, Edge, Opera
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    input[type="number"] {
+      -moz-appearance: textfield; // Firefox
     }
 
     // надпись
@@ -107,6 +116,12 @@
   // заивка цветом
   .v-input-content-background {
     background-color: $color-main-two-light-1;
+  }
+  // центрирование текста в input
+  .v-input-content-centered {
+    input {
+      text-align: center;
+    }
   }
 }
 // фокус на input
