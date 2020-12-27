@@ -68,7 +68,26 @@ export default class VInputNumber extends mixins(VInputMixin) {
     validator: x => typeof x === "number"
   })
   readonly value!: number | null;
-  // тип числа
+
+  //TODO: не работает
+  //* минимальное значение
+  @Prop({
+    type: [Number, String, Object],
+    default: null,
+    validator: x => ["number", "string", "object"].includes(typeof x)
+  })
+  readonly min!: number | string | null;
+
+  //TODO: не работает
+  //* масксимальное значение
+  @Prop({
+    type: [Number, String, Object],
+    default: null,
+    validator: x => ["number", "string", "object"].includes(typeof x)
+  })
+  readonly max!: number | string | null;
+
+  //* тип числа
   @Prop({
     type: String,
     default: "integer",
