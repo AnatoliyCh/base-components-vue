@@ -9,6 +9,9 @@ Vue.component("v-input-text", VInputText);
 import VInputPassword from "./components/v-input-password.vue"; // v-input-password.vue
 Vue.component("v-input-password", VInputPassword);
 
+import VInputNumber from "./components/v-input-number.vue"; // v-input-password.vue
+Vue.component("v-input-number", VInputNumber);
+
 import VCheckbox from "./components/v-checkbox.vue"; // v-checkbox.vue
 Vue.component("v-checkbox", VCheckbox);
 
@@ -29,6 +32,7 @@ export default {
     VButton,
     VInputText,
     VInputPassword,
+    VInputNumber,
     VCheckbox,
     VBlock,
     VSpiner,
@@ -46,8 +50,17 @@ import {
   faHome,
   faUsers,
   faCalendarAlt,
+  faInfoCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-library.add(faUserSecret, faUser, faKey, faHome, faUsers, faCalendarAlt);
+library.add(
+  faUserSecret,
+  faUser,
+  faKey,
+  faHome,
+  faUsers,
+  faCalendarAlt,
+  faInfoCircle
+);
 Vue.component("icon", FontAwesomeIcon);
