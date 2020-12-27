@@ -27,9 +27,9 @@
         :maxlength="maxlength"
         :placeholder="placeholder"
         :type="type"
-        @change="$emit('change', $event.target.value)"
-        @input="inputValidation($event.target.value)"
         @keypress="keypress($event)"
+        @input="inputValidation($event.target.value)"
+        @change="$emit('change', $event.target.value)"
         ref="input"
       />
       <!-- надпись -->
@@ -97,22 +97,27 @@ export default class VInputNumber extends mixins(VInputMixin) {
 
   type = "number";
 
-  // регулярки для целых чисел
+  // regExp для целых чисел
   // https://ru.stackoverflow.com/questions/863442/%D0%A3%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B8%D0%B7-%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B8-%D0%B2%D1%81%D0%B5%D1%85-%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB%D0%BE%D0%B2-%D0%BA%D1%80%D0%BE%D0%BC%D0%B5-%D1%86%D0%B8%D1%84%D1%80-%D0%B8-%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB%D0%B0
-  regExpInteger = new RegExp(/[\d]/g);
-  regExpNotInteger = new RegExp(/[^\d]/g);
+  regExpInteger = new RegExp(/[^\d]/g);
+
+  // нажатие на клавиатуру
+  // https://stackoverflow.com/questions/39782176/filter-input-text-only-accept-number-and-dot-vue-js
+  keypress(event: KeyboardEvent | null) {
+    if (!event) return false;
+    if (
+      event.key.replace(this.regExpInteger, "") === "" ||
+      (event.key === "0" && this.value === 0) // если уже есть 0
+    )
+      event.preventDefault();
+    else return true;
+  }
 
   @Emit("input")
   inputValidation(value: string | null) {
     if (!value) return null;
-    return Number(value.replace(this.regExpNotInteger, "")) || null; // вырезает всё кроме integer
-  }
-
-  // https://stackoverflow.com/questions/39782176/filter-input-text-only-accept-number-and-dot-vue-js
-  keypress(event: KeyboardEvent | null) {
-    if (!event) return false;
-    if (!this.regExpInteger.test(event.key)) event.preventDefault();
-    else return true;
+    const newValue = Number(value.replace(this.regExpInteger, "")); // вырезает всё кроме integer
+    return newValue === 0 ? newValue : newValue || null; // чтобы при 0 не возвращает null
   }
 
   // поднятие label
