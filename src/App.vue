@@ -100,11 +100,19 @@
     <label class="label-margin">v-input v-input-big v-input-icon: </label>
     <VInputText size="big" icon="user" />
     <VInputText size="big" icon="key" label="123" placeholder="placeholder" />
+    <!-- v-input-number -->
     <div class="wrapper">
       <div>
         <label>v-input-number: </label>
+        <VInputNumber v-model="testInputNumber" />
+      </div>
+      <div>
+        <label>v-input-number centered: </label>
         <VInputNumber v-model="testInputNumber" centered />
-        <label>{{ testInputNumber }}</label>
+      </div>
+      <div>
+        <label>v-input-number min-max: </label>
+        <VInputNumber v-model="testInputNumber" :min="1" :max="10" />
       </div>
     </div>
     <label class="label-margin">v-input-password: </label>
