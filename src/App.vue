@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <!-- color -->
     <div class="wrapper" style="display: block">
       <label>colors: </label>
       <div style="height: 16px; background-color: #ebf8f3"></div>
@@ -10,6 +11,7 @@
       <div style="height: 16px; background-color: #34495e"></div>
       <div style="height: 16px; background-color: #829ebb"></div>
     </div>
+    <!-- button -->
     <div class="wrapper">
       <div>
         <label>button: </label>
@@ -46,6 +48,7 @@
         <VButton size="big" circle>+</VButton>
       </div>
     </div>
+    <!-- checkbox -->
     <div class="wrapper">
       <div>
         <label>checkbox: </label>
@@ -126,6 +129,7 @@
         <td>{{ item.k3 }}</td>
       </template>
     </v-table>
+    <!-- modal -->
     <div class="wrapper">
       <v-button @click="modalShow = true">Модальное окно</v-button>
       <VModal v-model="modalShow"></VModal>
