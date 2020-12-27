@@ -5,7 +5,7 @@
       @change="$emit('change', $event.target.checked)"
       type="checkbox"
       :class="`v-checkbox-input v-checkbox-input-${size}`"
-      :disabled="readonly"
+      :disabled="disabled"
     />
     <label v-if="label" class="v-checkbox-label">{{ label }}</label>
   </div>
@@ -36,7 +36,7 @@ export default class VCheckbox extends Vue {
     default: false,
     validator: x => typeof x === "boolean"
   })
-  readonly readonly!: string | null;
+  readonly disabled!: string | null;
   // размер
   @Prop({
     type: String,
