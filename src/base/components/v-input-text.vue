@@ -6,6 +6,7 @@
     <div
       :class="[
         'v-input-content',
+        { 'v-input-content-centered': centered },
         { 'v-input-content-border': bordered },
         { 'v-input-content-background': !label },
       ]"
@@ -23,12 +24,12 @@
       <!-- input -->
       <input
         :value="value"
-        @change="$emit('change', $event.target.value)"
-        @input="$emit('input', $event.target.value)"
         :maxlength="maxlength"
         :placeholder="placeholder"
-        ref="input"
         :type="type"
+        @change="$emit('change', $event.target.value)"
+        @input="$emit('input', $event.target.value)"
+        ref="input"
       />
       <!-- надпись -->
       <label
