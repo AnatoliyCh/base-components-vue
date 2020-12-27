@@ -37,8 +37,8 @@ export default {
     VBlock,
     VSpiner,
     VTable,
-    VModal,
-  },
+    VModal
+  }
 };
 
 // импорт fontawesome icons
@@ -50,7 +50,7 @@ import {
   faHome,
   faUsers,
   faCalendarAlt,
-  faInfoCircle,
+  faInfoCircle
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 

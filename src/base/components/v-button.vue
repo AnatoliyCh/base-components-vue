@@ -6,7 +6,7 @@
       { 'v-button-flat': flat },
       { 'v-button-round': round },
       { 'v-button-circle': circle },
-      `v-button-${size}`,
+      `v-button-${size}`
     ]"
     :style="circle && { width: (size === 'big' ? '44' : '32') + 'px' }"
     @click="$emit('click', $event)"
