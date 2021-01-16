@@ -57,20 +57,36 @@
         <label>{{ checkbox }}</label>
       </div>
     </div>
-    <label class="label-margin">v-input: </label>
-    <VInputText v-model="test1" :maxlength="2" />
-    <label class="label-margin">v-input bordered: </label>
-    <VInputText v-model="test1" :maxlength="2" bordered />
-    <label class="label-margin">v-input placeholder: </label>
-    <VInputText :maxlength="2" placeholder="placeholder" />
-    <div>{{ test1 }}</div>
-    <label class="label-margin">v-input + label: </label>
-    <VInputText :value="test2" @change="test2 = $event" label="123" />
-    <div>{{ test2 }}</div>
-    <label class="label-margin">v-input v-input-big: </label>
-    <VInputText size="big" />
-    <VInputText size="big" bordered />
-    <VInputText size="big" label="123" />
+    <!-- v-input -->
+    <div class="wrapper">
+      <div>
+        <label class="label-margin">v-input: </label>
+        <VInputText v-model="test1" :maxlength="2" />
+      </div>
+      <div>
+        <label class="label-margin">v-input bordered: </label>
+        <VInputText v-model="test1" :maxlength="2" bordered />
+      </div>
+      <div>
+        <label class="label-margin">v-input placeholder: </label>
+        <VInputText :maxlength="2" placeholder="placeholder" />
+        <div>{{ test1 }}</div>
+      </div>
+      <div>
+        <label class="label-margin">v-input + label: </label>
+        <VInputText :value="test2" @change="test2 = $event" label="123" />
+        <div>{{ test2 }}</div>
+      </div>
+      <div>
+        <label class="label-margin">v-input v-input-big: </label>
+        <VInputText size="big" />
+        <p></p>
+        <VInputText size="big" bordered />
+        <p></p>
+        <VInputText size="big" label="123" />
+      </div>
+    </div>
+
     <label class="label-margin">v-block: </label>
     <div
       style="
@@ -118,6 +134,14 @@
         <VInputNumber v-model="testInputNumber" :min="1" :max="10" />
       </div>
     </div>
+    <!-- v-input-dateTime -->
+    <div class="wrapper">
+      <div>
+        <label>v-input-dateTime: </label>
+        <VInputDateTime v-model="testInputDate" />
+      </div>
+    </div>
+
     <label class="label-margin">v-input-password: </label>
     <VInputPassword v-model="test1" :maxlength="2" icon="key" />
 
@@ -144,6 +168,8 @@
       <icon icon="home" />
       <icon icon="users" />
       <icon icon="calendar-alt" />
+      <icon icon="info-circle" />
+      <icon icon="search" />
     </div>
   </div>
 </template>
@@ -154,6 +180,7 @@ import VButton from "./base/components/v-button.vue";
 import VInputText from "./base/components/v-input-text.vue";
 import VInputPassword from "./base/components/v-input-password.vue";
 import VInputNumber from "./base/components/v-input-number.vue";
+import VInputDateTime from "./base/components/v-input-dateTime.vue";
 import VCheckbox from "./base/components/v-checkbox.vue";
 import VBlock from "./base/components/v-block.vue";
 import VSpiner from "./base/components/v-spiner.vue";
@@ -165,6 +192,7 @@ import VModal from "./base/components/v-modal.vue";
     VInputText,
     VInputPassword,
     VInputNumber,
+    VInputDateTime,
     VCheckbox,
     VBlock,
     VSpiner,
@@ -176,6 +204,7 @@ export default class App extends Vue {
   test2 = "123";
 
   testInputNumber: number | null = null;
+  testInputDate: string | null = null;
 
   testTable = [
     { k1: "1", k2: "2", k3: "3" },

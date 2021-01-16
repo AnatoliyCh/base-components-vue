@@ -9,8 +9,11 @@ Vue.component("v-input-text", VInputText);
 import VInputPassword from "./components/v-input-password.vue"; // v-input-password.vue
 Vue.component("v-input-password", VInputPassword);
 
-import VInputNumber from "./components/v-input-number.vue"; // v-input-password.vue
+import VInputNumber from "./components/v-input-number.vue"; // v-input-number.vue
 Vue.component("v-input-number", VInputNumber);
+
+import VInputDateTime from "./components/v-input-dateTime.vue"; // v-input-dateTime.vue
+Vue.component("v-input-dateTime", VInputDateTime);
 
 import VCheckbox from "./components/v-checkbox.vue"; // v-checkbox.vue
 Vue.component("v-checkbox", VCheckbox);
@@ -33,12 +36,13 @@ export default {
     VInputText,
     VInputPassword,
     VInputNumber,
+    VInputDateTime,
     VCheckbox,
     VBlock,
     VSpiner,
     VTable,
-    VModal
-  }
+    VModal,
+  },
 };
 
 // импорт fontawesome icons
@@ -50,7 +54,8 @@ import {
   faHome,
   faUsers,
   faCalendarAlt,
-  faInfoCircle
+  faInfoCircle,
+  faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
@@ -61,6 +66,7 @@ library.add(
   faHome,
   faUsers,
   faCalendarAlt,
-  faInfoCircle
+  faInfoCircle,
+  faSearch
 );
 Vue.component("icon", FontAwesomeIcon);
